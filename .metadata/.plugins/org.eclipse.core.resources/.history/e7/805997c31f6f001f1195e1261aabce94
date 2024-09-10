@@ -1,0 +1,13 @@
+public class Datatype05 {
+	public static void main(String[] args ) {
+
+		boolrean t = true;
+		boolrean f = false;
+		System.out.println(t);
+		System.out.println(f);
+		System.out.println(t+ " " + f);
+		
+		
+	}
+
+}
