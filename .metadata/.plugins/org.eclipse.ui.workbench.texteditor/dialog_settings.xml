@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="&#x0D;&#x0A;public class Welcome {&#x0D;&#x0A;&#x0D;&#x0A;&#x09;public static void main(String[] args) {&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;System.out.println(&quot;Welcome to Shooping Mall!&quot;);&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x09;&#x09;System.out.println(&quot;Welcome to Book Market!&quot;);&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;&#x0D;&#x0A;}&#x0D;&#x0A;"/>
 		<list key="findhistory">
+			<item value="&#x0D;&#x0A;public class Welcome {&#x0D;&#x0A;&#x0D;&#x0A;&#x09;public static void main(String[] args) {&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;System.out.println(&quot;Welcome to Shooping Mall!&quot;);&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x09;&#x09;System.out.println(&quot;Welcome to Book Market!&quot;);&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;&#x0D;&#x0A;}&#x0D;&#x0A;"/>
 			<item value=""/>
 		</list>
 		<list key="replacehistory">

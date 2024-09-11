@@ -14,7 +14,7 @@ public class Welcome03 {
 		
 		String greeting = "Welcome to Shooping Mall!";
 		String tagline = "Welcome to Book Market!";
-		
+
 		System.out.println("*****************************************************");
 		System.out.println("\t"+greeting);
 		System.out.println("\t"+tagline);

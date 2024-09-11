@@ -14,7 +14,8 @@ public class Input01 {
 		double db = s1.nextDouble();
 		System.out.println("정숫값: " + n);
 		System.out.println("실숫값: " + db);
-
+		
+	
 	}
 
 }

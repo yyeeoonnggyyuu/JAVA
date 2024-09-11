@@ -42,7 +42,7 @@ public class Welcome03ex {
 		System.out.println("*****************************************************"); 
 		System.out.println(" 당신의 이름은 : " + userName + "\n 당신의 연락처는 : " + phoneNumber + "\n 당신은 " + n + "번 메뉴를 선택했습니다.");
 		
-	
+
 	}
 
 }
