@@ -16,7 +16,12 @@ public class Object01 {
 		
 		//똑같이 스튜던트 클래스르 가져와서 stobj2로 정의하고 그 stobj2는 입력하는 메서드인 insertRecord 에 
 //		int id 와 String name 을 입력한 후 출력메서드인 printInfo() 로 출력
-		Student stObj2 = new Student();
+//		Student stObj2 = new Student();
+//		// Student class 에서 
+//		Student() {
+//			System.out.println("기본 생성자 Student() 호출");
+//		}
+//		이 생성자를 불러와서 기본생성자가출력됨
 		
 		stObj2.insertRecord(20021005,"홍길동");
 		stObj2.printInfo();
