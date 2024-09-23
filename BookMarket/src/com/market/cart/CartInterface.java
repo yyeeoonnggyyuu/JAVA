@@ -1,3 +1,6 @@
+package com.market.cart;
+
+import com.market.bookitem.Book;
 
 public interface CartInterface {
 //	추상메서드 생성

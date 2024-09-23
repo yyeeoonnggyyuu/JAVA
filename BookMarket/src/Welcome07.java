@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import com.market.cart.CartItem;
+
 public class Welcome07 {
 
 	static final int NUM_BOOK = 3;//도서의 개수에 대한 상수 선언

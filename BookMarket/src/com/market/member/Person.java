@@ -1,4 +1,5 @@
 //user를 객체로 관리하고 싶어서 클래스를 따로 만들었다
+package com.market.member;
 
 public class Person {
 	

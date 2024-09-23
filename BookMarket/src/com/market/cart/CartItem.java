@@ -1,3 +1,6 @@
+package com.market.cart;
+
+import com.market.bookitem.Book;
 
 public class CartItem {
 //	필드값을 변수로 해도 문제없음

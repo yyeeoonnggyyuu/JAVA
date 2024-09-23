@@ -1,6 +1,16 @@
-import java.util.Scanner;
 
-public class Welcome09 {
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import java.util.Scanner;
+import com.market.bookitem.Book;
+import com.market.cart.Cart;
+import com.market.member.Admin;
+import com.market.member.User;
+
+
+public class Welcome11 {
 
 	static final int NUM_BOOK = 3;//도서의 개수에 대한 상수 선언
 	static final int NUM_ITEM = 7;// 도서정보의 개수에 대한 상수 선언
@@ -39,48 +49,55 @@ public class Welcome09 {
 			System.out.println("*****************************************************");	
 			
 			menuIntroduction();
-			
-			System.out.println("메뉴 번호를 선택해주세요.");
-			int n = input.nextInt();
-			
-			if(n<1 || n>9) {
-				System.out.println("1부터 9까지의 숫자를 입력하세요.");
-			}
-			else {
-				switch(n) {
-				case 1 :
-					menuGuestInfo(userName, userMobile);
-					break;
-				case 2 :
-					menuCartItemList();
-					break;
-				case 3 :
-					menuCartClear();
-					break;
-				case 4 :
-//					menuCartAddItem(mBook);  매개변수 변경
-					menuCartAddItem(mBookList);
-					break;
-				case 5 :
-					menuCartRemoveItemCount();
-					break;
-				case 6 :
-					menuCartRemoveItem();
-					break;
-				case 7 :
-					menuCartBill();
-					break;
-				case 8 :
-					menuExit();
-					quit = true;
-					break;		
-				case 9 :
-					menuAdminLogin();
-					break;
+			try {
+				System.out.println("메뉴 번호를 선택해주세요.");
+				int n = input.nextInt();
+				
+				if(n<1 || n>9) {
+					System.out.println("1부터 9까지의 숫자를 입력하세요.");
 				}
-									
+				else {
+					switch(n) {
+					case 1 :
+						menuGuestInfo(userName, userMobile);
+						break;
+					case 2 :
+						menuCartItemList();
+						break;
+					case 3 :
+						menuCartClear();
+						break;
+					case 4 :
+//						menuCartAddItem(mBook);  매개변수 변경
+						menuCartAddItem(mBookList);
+						break;
+					case 5 :
+						menuCartRemoveItemCount();
+						break;
+					case 6 :
+						menuCartRemoveItem();
+						break;
+					case 7 :
+						menuCartBill();
+						break;
+					case 8 :
+						menuExit();
+						quit = true;
+						break;		
+					case 9 :
+						menuAdminLogin();
+						break;
+					}
+										
+				}
+	//while 문 끝 
 			}
-//while 문 끝 
+			catch(Exception e) {
+				System.out.println("올바르지 않은 메뉴 선택으로 종료합니다.");
+				quit =true;
+			}
+			
+			
 		}
 		
 	}
@@ -213,7 +230,49 @@ public class Welcome09 {
 	}
 	
 	public static void menuCartBill() {
-		System.out.println("7. 영수증 표시하기");
+//		System.out.println("7. 영수증 표시하기");
+		if (mCart.mCartCount == 0 ) System.out.println("장바구니에 항목이 없습니다.");
+		
+		else {
+			System.out.println("배송받은 분은 고객 정보와 같습니까? Y | N");
+			Scanner input = new Scanner(System.in);
+			String str = input.nextLine();
+			
+			if(str.toUpperCase().equals("Y")) {
+				System.out.println("배송지를 입력해주세요.");
+				String address = input.nextLine();
+				printBill(mUser.getName(), String.valueOf(mUser.getPhone()), address);
+			}
+			else {
+				System.out.println("배송받을 고객명을 입력하세요");
+				String name = input.nextLine();
+				System.out.println("배송받을 고객의 연락처를 입력하세요");
+				String phone = input.nextLine();
+				System.out.println("배송받을 고객의 배송지를 입력해주세요");
+				String address = input.nextLine();
+				printBill(name, phone, address);
+			}
+		}
+	}
+	public static void printBill(String name, String phone, String address){
+		
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		String strDate = formatter.format(date);
+		System.out.println();
+		System.out.println("----------------배송받을 고객 정보 -----------------");
+		System.out.println("고객명 : " + name + "	\t\t연락처 : " + phone);
+		System.out.println(" 배송지 : " +address + "\t\t발송일 : "+ strDate);
+		
+		mCart.printCart();
+		
+		int sum = 0;
+		for(int i = 0 ; i< mCart.mCartCount; i++)
+			sum += mCart.mCartItem[i].getTotalPrice();
+		
+		System.out.println("\t\t\t주문 총금액 : "+ sum + "원\n");
+		System.out.println("-----------------------------------------------");
+		System.out.println();
 	}
 	
 	public static void menuExit() {

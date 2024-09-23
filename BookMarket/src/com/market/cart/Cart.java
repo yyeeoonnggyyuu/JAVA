@@ -1,10 +1,12 @@
+package com.market.cart;
+import com.market.bookitem.Book;
 
 public class Cart implements CartInterface {
 	
 	static final int NUM_BOOK =3;
-	CartItem[] mCartItem = new CartItem[NUM_BOOK]; 
+	public CartItem[] mCartItem = new CartItem[NUM_BOOK]; 
 	// 장바구니의 도서갯수만큼 배열로 만들어서 저장하겠다.
-	static int mCartCount = 0;
+	public static int mCartCount = 0;
 	
 	public Cart() {}
 	
@@ -12,13 +14,13 @@ public class Cart implements CartInterface {
 	//추상메서드를 하나하나 모든걸 만들어 줘야함 (안만들시 에러발생)
 	public void printBookList(Book[] booklist) {
 		for (int i = 0; i< booklist.length; i++) {
-			System.out.println(booklist[i].getBookId ()+ " | ");
-			System.out.println(booklist[i].getName ()+ " | ");
-			System.out.println(booklist[i].getUnitPrice ()+ " | ");
-			System.out.println(booklist[i].getAuthor ()+ " | ");
-			System.out.println(booklist[i].getDescription ()+ " | ");
-			System.out.println(booklist[i].getCategory ()+ " | ");
-			System.out.println(booklist[i].getReleaseDate ()+ " | ");
+			System.out.print(booklist[i].getBookId ()+ " | ");
+			System.out.print(booklist[i].getName ()+ " | ");
+			System.out.print(booklist[i].getUnitPrice ()+ " | ");
+			System.out.print(booklist[i].getAuthor ()+ " | ");
+			System.out.print(booklist[i].getDescription ()+ " | ");
+			System.out.print(booklist[i].getCategory ()+ " | ");
+			System.out.print(booklist[i].getReleaseDate ()+ " | ");
 			System.out.println("");
 		}
 	}
