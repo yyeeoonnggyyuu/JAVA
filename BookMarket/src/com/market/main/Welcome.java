@@ -11,10 +11,11 @@ import com.market.cart.Cart;
 import com.market.member.Admin;
 import com.market.member.User;
 import com.market.exception.CartException;
+import java.util.ArrayList;
 
 public class Welcome {
 
-	static final int NUM_BOOK = 100;
+	static final int NUM_BOOK = 3;
 	static final int NUM_ITEM = 7;
 	
 	static Cart mCart = new Cart();
@@ -22,7 +23,8 @@ public class Welcome {
 
 	public static void main(String[] args) {
 
-		Book[] mBookList;
+//		Book[] mBookList;
+		ArrayList<Book> mBookList;
 		int mTotalBook = 0; 
 
 		Scanner input = new Scanner(System.in);
@@ -69,8 +71,9 @@ public class Welcome {
 						break;
 					case 4 :
 						mTotalBook = totalFileToBookList();//전체 도서 갯수 인덱스 값을 받아서 mTotalBook 을 아래 뉴북에 배열로 저장 그럼 mBookList 의 책의 갯수가 나옴
-						mBookList = new Book[mTotalBook];
+//						mBookList = new Book[mTotalBook];
 						//						menuCartAddItem(mBook);  매개변수 변경
+						mBookList = new ArrayList<Book>();
 						menuCartAddItem(mBookList);
 						break;
 					case 5 :
@@ -152,7 +155,7 @@ public class Welcome {
 		}
 	}
 
-	public static void menuCartAddItem(Book[] booklist) {
+	public static void menuCartAddItem(ArrayList<Book> booklist) {
 		//		System.out.println("장바구니에 항목 추가하기 : ");
 
 		BookList(booklist);
@@ -170,9 +173,9 @@ public class Welcome {
 			boolean flag = false;
 			int numId = -1;
 
-			for(int i =0 ; i < NUM_BOOK; i++) {
-				if(str.equals(booklist[i].getBookId())) {
-
+			for(int i =0 ; i < booklist.size(); i++) {
+				if(str.equals(booklist.get(i).getBookId())) {
+									//get(i) 인 이유는 booklist의 인덱스 번호로 추가하기 위해서
 					numId = i;
 					flag = true;
 					break;
@@ -184,10 +187,10 @@ public class Welcome {
 				str = input.nextLine();
 
 				if(str.toUpperCase().equals("Y")) {
-					System.out.print(booklist[numId].getBookId() + " 도서가 장바구니에 추가 되었습니다.");
-
-					if(!isCartInBook(booklist[numId].getBookId())) {
-						mCart.insertBook(booklist[numId]);
+					System.out.print(booklist.get(numId).getBookId() + " 도서가 장바구니에 추가 되었습니다.");
+											//여기서 numId 인 이유는 장바구니에 추가된 녀석들을 가지고 하는 거기 때문에
+					if(!isCartInBook(booklist.get(numId).getBookId())) {
+						mCart.insertBook(booklist.get(numId));
 					}
 				}
 				quit = true;
@@ -216,7 +219,7 @@ public class Welcome {
 				int numId = -1;
 
 				for(int i=0 ; i<mCart.mCartCount ; i++) {
-					if (str.equals(mCart.mCartItem[i].getBookID())) {
+					if (str.equals(mCart.mCartItem.get(i).getBookID())) {
 						numId = i;
 						flag = true;
 						break;
@@ -227,7 +230,7 @@ public class Welcome {
 					System.out.println("장바구니의 항목을 삭제하겠습니까? Y | N");
 					str = input.nextLine();
 					if (str.toUpperCase().equals("Y")) {
-						System.out.println(mCart.mCartItem[numId].getBookID() + "장바구니에서 도서가 삭제되었습니다.");
+						System.out.println(mCart.mCartItem.get(numId).getBookID() + "장바구니에서 도서가 삭제되었습니다.");
 						mCart.removeCart(numId);
 					}
 					quit = true;
@@ -278,7 +281,8 @@ public class Welcome {
 
 		int sum = 0;
 		for(int i = 0 ; i< mCart.mCartCount; i++)
-			sum += mCart.mCartItem[i].getTotalPrice();
+			sum += mCart.mCartItem.get(i).getTotalPrice();
+		//mCart가 가지고있는 mCartItem의 get(인덕스넘버들의) getTotalPrice 가격의 총합을 sum에 대입 ㅅㅅ
 
 		System.out.println("\t\t\t주문 총금액 : "+ sum + "원\n");
 		System.out.println("-----------------------------------------------");
@@ -372,14 +376,14 @@ public class Welcome {
 		return 0;
 	}
 
-	public static void setFileToBookList(Book[] booklist) {
+	public static void setFileToBookList(ArrayList<Book> booklist) {
 		try {
 			FileReader fr = new FileReader("book.txt");
 			BufferedReader reader = new BufferedReader(fr);
 
 			String str2;
 			String[] readBook = new String[7];
-			int count = 0;
+//			int count = 0;
 
 			while ((str2 = reader.readLine()) != null) {
 				if (str2.contains("ISBN")) {
@@ -391,9 +395,14 @@ public class Welcome {
 					readBook[5] = reader.readLine();
 					readBook[6] = reader.readLine();
 
-					booklist[count++] = new Book(readBook[0], readBook[1], 
+//					booklist[count++] = new Book(readBook[0], readBook[1], 
+//							Integer.parseInt(readBook[2]), readBook[3], 
+//							readBook[4], readBook[5], readBook[6]);
+					Book bookitem = new Book(readBook[0], readBook[1], 
 							Integer.parseInt(readBook[2]), readBook[3], 
 							readBook[4], readBook[5], readBook[6]);
+					
+					booklist.add(bookitem);
 				}
 			}
 
@@ -404,8 +413,9 @@ public class Welcome {
 		}
 	}
 
-	public static void BookList(Book[] booklist) {
+	public static void BookList(ArrayList<Book> booklist) {
 		setFileToBookList(booklist);
+		//setFileToBooklist 매서드를 수정해야 할 경우 ctrl + 클릭하면 그 매서드로 바로 이동가능
 	}
 
 	public static boolean isCartInBook(String bookId) {

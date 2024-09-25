@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="mCartCount"/>
+		<item key="selection" value="menuCartAddItem"/>
 		<list key="findhistory">
+			<item value="menuCartAddItem"/>
+			<item value="setfiletobooklist"/>
+			<item value="menucartremoveitem"/>
+			<item value="setFileToBookList"/>
 			<item value="mCartCount"/>
 			<item value="Admin"/>
 			<item value="mobile"/>
