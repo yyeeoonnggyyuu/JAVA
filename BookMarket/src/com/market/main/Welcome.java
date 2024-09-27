@@ -1,5 +1,6 @@
 package com.market.main;
 
+import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -11,20 +12,20 @@ import com.market.cart.Cart;
 import com.market.member.Admin;
 import com.market.member.User;
 import com.market.exception.CartException;
-import java.util.ArrayList;
+
 
 public class Welcome {
 
 	static final int NUM_BOOK = 3;
 	static final int NUM_ITEM = 7;
-	
+
 	static Cart mCart = new Cart();
 	static User mUser;
 
 	public static void main(String[] args) {
 
-//		Book[] mBookList;
-		ArrayList<Book> mBookList;
+		//		Book[] mBookList;
+		ArrayList<Book> mBookList; //ArrayList는 유동성이 좋음 
 		int mTotalBook = 0; 
 
 		Scanner input = new Scanner(System.in);
@@ -71,7 +72,7 @@ public class Welcome {
 						break;
 					case 4 :
 						mTotalBook = totalFileToBookList();//전체 도서 갯수 인덱스 값을 받아서 mTotalBook 을 아래 뉴북에 배열로 저장 그럼 mBookList 의 책의 갯수가 나옴
-//						mBookList = new Book[mTotalBook];
+						//						mBookList = new Book[mTotalBook];
 						//						menuCartAddItem(mBook);  매개변수 변경
 						mBookList = new ArrayList<Book>();
 						menuCartAddItem(mBookList);
@@ -175,7 +176,7 @@ public class Welcome {
 
 			for(int i =0 ; i < booklist.size(); i++) {
 				if(str.equals(booklist.get(i).getBookId())) {
-									//get(i) 인 이유는 booklist의 인덱스 번호로 추가하기 위해서
+					//get(i) 인 이유는 booklist의 인덱스 번호로 추가하기 위해서
 					numId = i;
 					flag = true;
 					break;
@@ -188,7 +189,7 @@ public class Welcome {
 
 				if(str.toUpperCase().equals("Y")) {
 					System.out.print(booklist.get(numId).getBookId() + " 도서가 장바구니에 추가 되었습니다.");
-											//여기서 numId 인 이유는 장바구니에 추가된 녀석들을 가지고 하는 거기 때문에
+					//여기서 numId 인 이유는 장바구니에 추가된 녀석들을 가지고 하는 거기 때문에
 					if(!isCartInBook(booklist.get(numId).getBookId())) {
 						mCart.insertBook(booklist.get(numId));
 					}
@@ -383,7 +384,7 @@ public class Welcome {
 
 			String str2;
 			String[] readBook = new String[7];
-//			int count = 0;
+			//			int count = 0;
 
 			while ((str2 = reader.readLine()) != null) {
 				if (str2.contains("ISBN")) {
@@ -395,13 +396,13 @@ public class Welcome {
 					readBook[5] = reader.readLine();
 					readBook[6] = reader.readLine();
 
-//					booklist[count++] = new Book(readBook[0], readBook[1], 
-//							Integer.parseInt(readBook[2]), readBook[3], 
-//							readBook[4], readBook[5], readBook[6]);
+					//					booklist[count++] = new Book(readBook[0], readBook[1], 
+					//							Integer.parseInt(readBook[2]), readBook[3], 
+					//							readBook[4], readBook[5], readBook[6]);
 					Book bookitem = new Book(readBook[0], readBook[1], 
 							Integer.parseInt(readBook[2]), readBook[3], 
 							readBook[4], readBook[5], readBook[6]);
-					
+
 					booklist.add(bookitem);
 				}
 			}
