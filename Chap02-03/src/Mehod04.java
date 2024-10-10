@@ -9,7 +9,7 @@ public class Mehod04 {
 		System.out.println(sum);
 	}
 	public static void main(String[] args) {
-		System.out.println("1부터 10의 합계 : ");
+		System.out.print("1부터 10의 합계 : ");
 		sum();
 	}
 }

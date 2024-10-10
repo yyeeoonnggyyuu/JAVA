@@ -1,0 +1,113 @@
+Chapter10
+프로시저와 함수 , 트리거
+프로젝트 할 때 트리거 는 무조건 구현해야함
+트리거는  내가 결제할시 다른곳에도 정보가 저장되어야함(회원탈퇴 순간 회원탈퇴정보로 넘어가야함)
+트레젝션 은내가 결제에 성공했다가 승인이 안났을 경우 결제도 취소되야함
+
+1.SQL 스토어드 프로그램
+
+-
+-
+
+스토어드 프로그램의 특징
+-
+-
+-
+-
+-
+-
+- 비즈니스 로직 분리
+
+
+
+$$를 붙이는 이유는??? 딜리미터 값을 딜리미터는 종류값을 바꾸라는 것이므로 
+$$로 바꾼다 바꿔놓지 않고 쓰면 어느정도까지가 프로시저의 끝인지를 모르므로 
+딜리미터 값은 $$ 이야라고 알려주고 
+end $$ 로 끝내는 시점을 알려주는 것 
+
+
+흠 예제 10-1 부터 10-5까지 Error Code 1304가 뜸 해결해보기 
+/*예제10-1*/
+DELIMITER $$
+CREATE PROCEDURE proc_if()
+    BEGIN
+        DECLARE x INT;
+        DECLARE y INT DEFAULT 5;
+        SET x = 10;
+
+        IF x > y THEN
+            SELECT 'x는 y보다 큽니다.' AS 결과;
+        ELSE
+            SELECT 'x는 y보다 작거나 같습니다.' AS 결과;
+        END IF;
+    END $$
+DELIMITER ;
+
+CALL proc_if()
+
+--------------------------------------------------------
+/*예제10-2*/
+CASE문을 사용하여 숫자 10이 짝수인지 홀수인지를 판별하는 프로시저를 작성하시오
+DELIMITER $$
+CREATE PROCEDURE proc_case()
+    BEGIN
+        DECLARE x INT DEFAULT 10;
+        DECLARE y INT;
+        SET y = 10 mod 2;
+
+        CASE
+            WHEN y = 0 THEN
+                SELECT 'x는 짝수입니다' AS '결과';
+        ELSE
+            SELECT 'x는 홀수입니다' AS '결과';
+        END CASE;
+    END $$
+DELIMITER ;
+
+CALL proc_case()
+
+--------------------------------------------------------
+스토어드 프로시저의 개념 
+SQL 스토어드 프로시저
+-
+-
+-
+-
+
+
+예제 10-6 
+여기서 
+proc_고객정보() 를 만들어 두면
+CALL proc_고객정보(); 로 언제든지 불러올 수 있음
+주로 사용되는 것들을 저장해두면 편함
+
+
+예제10-7 부터는 되네 하 ...
+
+
+--------------------------------------------------------
+DELIMITER $$
+CREATE PROCEDURE proc_주문년도시_고객정보
+    (
+     IN order_year INT,
+     IN city VARCHAR(50) 
+    )
+BEGIN
+    SELECT 고객.고객번호
+          ,고객회사명
+          ,도시
+          ,COUNT(*) AS 주문건수
+    FROM 고객 JOIN 주문
+    ON 고객.고객번호 = 주문.고객번호
+    WHERE YEAR(주문일) = order_year
+    AND 도시 = city
+    GROUP BY 고객.고객번호
+            ,고객회사명;
+END $$
+DELIMITER ;
+
+콜문의 2021과 공주시가 프로시저 주문년도시와 고객정보의 order_year INT와 city VARCHAR로 대입되고
+그게 BEGIN의 WHERE의 order_year과 and 도시 =city에 대입되어 출력됨
+
+콜 문
+CALL proc_주문년도시_고객정보(2021, '공주시');

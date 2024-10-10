@@ -13,7 +13,7 @@ public class If01 {
 			System.out.println("당신은 투표할 자격이 있습니다.");
 			
 		} else {
-			System.out.println("당신은 18세 미만입니다");1
+			System.out.println("당신은 18세 미만입니다");
 			System.out.println("당신은 투표할 자격이 없습니다.");
 		}
 		System.out.println("이 문장은 if문 밖에 있습니다.");
