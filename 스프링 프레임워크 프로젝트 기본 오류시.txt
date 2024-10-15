@@ -1,0 +1,4 @@
+window -> preferences -> XML(Wild Web Developer)
+download external resources like referenced DTD, XSD
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd"> -->	
+	<!-- http 와 https 의 차이는 보안의 이유임 s 는 시큐리티의 약자 -->
+	
+	
+	<bean id="tWalk" class="ch03_pjt_02.TransportationWalk" />
+	
+</beans>
