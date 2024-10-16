@@ -7,4 +7,8 @@
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="ch02_pkt_01.ICalculator"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="ch03_pjt_03.ICalculator"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.dao.StudentDao"/>
+    <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.Student"/>
 </qualifiedTypeNameHistroy>

@@ -10,10 +10,11 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId><!-- bean을 여기다 담을거야!-->
+			<artifactId>spring-context</artifactId>
 			<version>5.2.9.RELEASE</version>
 		</dependency>
 	</dependencies>
+
 
 	<!--빌드 설정-->
 	<build>
@@ -29,5 +30,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 
 </project>

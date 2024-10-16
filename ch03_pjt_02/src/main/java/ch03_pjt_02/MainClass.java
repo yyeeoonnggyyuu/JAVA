@@ -8,12 +8,15 @@ public class MainClass {
 //		TransportationWalk transportationWalk = new TransportationWalk();
 //		transportationWalk.move();
 
+//		컨테이너 		
 		GenericXmlApplicationContext ctx =
 				new GenericXmlApplicationContext("classpath:applicationContext.xml");
-		
+
 		TransportationWalk transportationWalk = 
 				ctx.getBean("tWalk", TransportationWalk.class);
 		transportationWalk.move();
+		transportationWalk.run();
+		
 		
 		ctx.close();
 	}
