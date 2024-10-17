@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="menuCartAddItem"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="eMSInformationService"/>
+			<item value="studentModifyService"/>
 			<item value="menuCartAddItem"/>
 			<item value="setfiletobooklist"/>
 			<item value="menucartremoveitem"/>

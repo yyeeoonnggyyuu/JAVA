@@ -6,9 +6,16 @@
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="ch02_pkt_01.ICalculator"/>
-    <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
     <fullyQualifiedTypeName name="ch03_pjt_03.ICalculator"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.dao.StudentDao"/>
     <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.Student"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.service.StudentSelectService"/>
+    <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.service.StudentModifyService"/>
+    <fullyQualifiedTypeName name="ch04_pjt_01.ems.member.service.StudentDeleteService"/>
+    <fullyQualifiedTypeName name="ch04_pjt_02.scope.DependencyBean"/>
+    <fullyQualifiedTypeName name="ch05_pjt_01.contact.utils.InitSampleData"/>
+    <fullyQualifiedTypeName name="ch05_pjt_01.contact.service.ContactRegisterService"/>
+    <fullyQualifiedTypeName name="ch05_pjt_01.contact.service.ContactSearchService"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,3 @@
+녹음 21 순서
+MainClass -> PrintStudent -> studentAllSele_-> printStudent -> MainClass ->studentselectservice -> studentDao
+dao sNum 이 실행값은 studenSelectservice 받고 이걸 리턴한거를 -> MainClass studentSelectService 가 받음

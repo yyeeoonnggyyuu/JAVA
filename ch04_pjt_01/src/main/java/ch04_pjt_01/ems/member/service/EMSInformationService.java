@@ -43,8 +43,8 @@ public class EMSInformationService {
 			DBConnectionInfo info = dbInfos.get(key);
 			System.out.println("["+key + " DB]");
 			System.out.println("url: "+ info.getUrl() + "\t");
-			System.out.println("userId: " + info.getUserId()+"\t");
-			System.out.println("userPw: " + info.getUserPw()+"\n");
+			System.out.print("userId: " + info.getUserId()+"\t");
+			System.out.print("userPw: " + info.getUserPw()+"\n");
 		}
 	}
 
