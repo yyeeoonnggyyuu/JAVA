@@ -6,9 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="EMSInformationService"/>
 		<list key="findhistory">
 			<item value="eMSInformationService"/>
+			<item value="Tree"/>
+			<item value="hash"/>
+			<item value="ch04_pjt_01"/>
+			<item value="StudentRegisterService "/>
+			<item value="04"/>
 			<item value="studentModifyService"/>
 			<item value="menuCartAddItem"/>
 			<item value="setfiletobooklist"/>
@@ -18,19 +23,16 @@
 			<item value="Admin"/>
 			<item value="mobile"/>
 			<item value="getId"/>
-			<item value="phone"/>
-			<item value="getBookId"/>
-			<item value="Obj"/>
-			<item value="&#x0D;&#x0A;public class Welcome {&#x0D;&#x0A;&#x0D;&#x0A;&#x09;public static void main(String[] args) {&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;System.out.println(&quot;Welcome to Shooping Mall!&quot;);&#x0D;&#x0A;&#x09;&#x0D;&#x0A;&#x09;&#x09;System.out.println(&quot;Welcome to Book Market!&quot;);&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;&#x09;&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;&#x0D;&#x0A;}&#x0D;&#x0A;"/>
-			<item value=""/>
 		</list>
 		<list key="replacehistory">
+			<item value="Tree"/>
+			<item value="ch06_pjt_01"/>
 			<item value="obj"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1106"/>
-		<item key="DIALOG_Y_ORIGIN" value="272"/>
+		<item key="DIALOG_X_ORIGIN" value="804"/>
+		<item key="DIALOG_Y_ORIGIN" value="390"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

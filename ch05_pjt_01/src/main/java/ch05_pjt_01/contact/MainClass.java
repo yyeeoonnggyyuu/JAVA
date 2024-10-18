@@ -10,9 +10,11 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
+		
 		GenericXmlApplicationContext ctx = 
 				new GenericXmlApplicationContext("classpath:appCtx.xml");
 
+		
 		
 		InitSampleData initSampleData =
 				ctx.getBean("initSampleData", InitSampleData.class);

@@ -27,9 +27,33 @@
 		</property>
 	</bean>
 	
-	<bean id="contactDao" class="ch05_pjt_01.contact.dao.ContactDao"></bean>
+
+	<bean id="contactDao1" class="ch05_pjt_01.contact.dao.ContactDao">
+		<qualifier value="usedDao"/>
+	</bean>
+	<bean id="contactDao2" class="ch05_pjt_01.contact.dao.ContactDao"></bean>
+	<bean id="contactDao3" class="ch05_pjt_01.contact.dao.ContactDao"></bean>
 	<bean id="registerService" class="ch05_pjt_01.contact.service.ContactRegisterService"/>
 	<bean id="searchService" class="ch05_pjt_01.contact.service.ContactSearchService"/>
+	
+	
+	<bean id="firstBean1" class="ch05_pjt_01.contact.service.FirstBean" >
+		<qualifier value="usedBean"/>
+	</bean>
+	<bean id="firstBean2" class="ch05_pjt_01.contact.service.FirstBean" />
+	<bean id="firstBean3" class="ch05_pjt_01.contact.service.FirstBean" />
+	
+	<bean id="secondBean" class="ch05_pjt_01.contact.service.SecondBean" />
+	
+	<bean id="thirdBean" class="ch05_pjt_01.contact.service.ThirdBean" />
+	
+	<bean id="fourthBean1" class="ch05_pjt_01.contact.service.FourtBean" >
+	<qualifier value="usedBean"/>
+	</bean>
+	<bean id="fourthBean2" class="ch05_pjt_01.contact.service.FourtBean" />
+	<bean id="fourthBean3" class="ch05_pjt_01.contact.service.FourtBean" />
+	
+	<bean id="autoWiredEx" class="ch05_pjt_01.contact.service.AutoWiredEx" />
 
 
 </beans>

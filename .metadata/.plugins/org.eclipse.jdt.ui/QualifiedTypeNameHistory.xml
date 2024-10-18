@@ -18,4 +18,12 @@
     <fullyQualifiedTypeName name="ch05_pjt_01.contact.utils.InitSampleData"/>
     <fullyQualifiedTypeName name="ch05_pjt_01.contact.service.ContactRegisterService"/>
     <fullyQualifiedTypeName name="ch05_pjt_01.contact.service.ContactSearchService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+    <fullyQualifiedTypeName name="javax.inject.Inject"/>
+    <fullyQualifiedTypeName name="javax.inject.Named"/>
+    <fullyQualifiedTypeName name="ch06_pjt_01.ems.member.DBConnectionInfo"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="ch06_pjt_01.ems.configuration.MemberConfig2"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
